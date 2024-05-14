@@ -32,9 +32,34 @@ class InputHandler:
         except Exception as ex:
             print(ex)
 
+    def input_validation(self):
+        while True:
+            # divide the use input in to two part as a number and letter
+            try:
+                number, letter = int(self.user_inpt[0]), self.user_inpt[-1]
+            except Exception as ex:
+                print("Unexpected format! please enter [number|letter] format like [1a]", ex.__class__)
+                self.get_inpt("Enter new square : ")
+                continue
+
+            if len(self.user_inpt) != 2:
+                print("Unexpected format! please enter [number|letter] format like [1a]")
+                self.get_inpt("Enter new square : ")
+                continue
+            if number not in tuple(range(1, 9)):
+                print("Unexpected number format! please enter valid number between 1 to 8")
+                self.get_inpt("Enter valid square : ")
+                continue
+            if letter not in ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'):
+                print("Unexpected letter! please enter valid letter between a to h")
+                self.get_inpt("Enter valid square : ")
+                continue
+
+            return number, letter
+
 
 traker = Tracker(8, "h")
 inpt_handler = InputHandler()
 
 # just testing purpose
-# print(traker.traker())
+print(inpt_handler.input_validation())
