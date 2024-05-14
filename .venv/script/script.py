@@ -7,7 +7,12 @@ class Tracker:
 
         # get user chosen number and letter from board
         self.number = number
-        self.letter = letter
+        # store letter as a numerical value
+        #   take the letter position using indexing of inside the tuple
+        self.letter = self.initial_letter.index(letter) + 1  # letter index increase by one to match initial numbers
 
 
 traker = Tracker(2, "c")
+
+# just testing purpose
+print(traker.letter)
