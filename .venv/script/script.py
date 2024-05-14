@@ -58,8 +58,8 @@ class InputHandler:
             return number, letter
 
 
-traker = Tracker(8, "h")
 inpt_handler = InputHandler()
+number, letter = inpt_handler.input_validation()
 
-# just testing purpose
-print(inpt_handler.input_validation())
+traker = Tracker(number, letter)
+print(f"[{letter}{number}] square is  a \"{traker.traker()}\" Square ")
