@@ -11,8 +11,17 @@ class Tracker:
         #   take the letter position using indexing of inside the tuple
         self.letter = self.initial_letter.index(letter) + 1  # letter index increase by one to match initial numbers
 
+    # create square color tracker function
+    def traker(self):
+        # if user number and letter is odd or even number then chess board square must be black
+        if (self.number % 2 == 1 and self.letter % 2 == 1) or (self.number % 2 == 0 and self.letter % 2 == 0):
+            return "Black"
+        # if it's not so square must be white
+        else:
+            return "White"
 
-traker = Tracker(2, "c")
+
+traker = Tracker(8, "h")
 
 # just testing purpose
-print(traker.letter)
+print(traker.traker())
