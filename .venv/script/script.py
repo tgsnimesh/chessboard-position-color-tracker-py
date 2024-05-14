@@ -21,7 +21,20 @@ class Tracker:
             return "White"
 
 
+class InputHandler:
+    def __init__(self):
+        self.user_inpt = None
+        self.get_inpt("Enter position of the square and see the colour of the square : ")
+
+    def get_inpt(self, prompt):
+        try:
+            self.user_inpt = input(prompt)
+        except Exception as ex:
+            print(ex)
+
+
 traker = Tracker(8, "h")
+inpt_handler = InputHandler()
 
 # just testing purpose
-print(traker.traker())
+# print(traker.traker())
