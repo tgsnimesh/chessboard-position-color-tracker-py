@@ -28,7 +28,7 @@ class InputHandler:
 
     def get_inpt(self, prompt):
         try:
-            self.user_inpt = input(prompt)
+            self.user_inpt = input(prompt).lower()
         except Exception as ex:
             print(ex)
 
