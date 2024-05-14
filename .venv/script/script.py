@@ -24,7 +24,7 @@ class Tracker:
 class InputHandler:
     def __init__(self):
         self.user_inpt = None
-        self.get_inpt("Enter position of the square and see the colour of the square : ")
+        self.get_inpt("\nEnter position of the square and see the colour of the square : ")
 
     def get_inpt(self, prompt):
         try:
@@ -38,20 +38,20 @@ class InputHandler:
             try:
                 number, letter = int(self.user_inpt[0]), self.user_inpt[-1]
             except Exception as ex:
-                print("Unexpected format! please enter [number|letter] format like [1a]", ex.__class__)
+                print("\nUnexpected format! please enter [number|letter] format like [1a]", ex.__class__)
                 self.get_inpt("Enter new square : ")
                 continue
 
             if len(self.user_inpt) != 2:
-                print("Unexpected format! please enter [number|letter] format like [1a]")
+                print("\nUnexpected format! please enter [number|letter] format like [1a]")
                 self.get_inpt("Enter new square : ")
                 continue
             if number not in tuple(range(1, 9)):
-                print("Unexpected number format! please enter valid number between 1 to 8")
+                print("\nUnexpected number format! please enter valid number between 1 to 8")
                 self.get_inpt("Enter valid square : ")
                 continue
             if letter not in ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'):
-                print("Unexpected letter! please enter valid letter between a to h")
+                print("\nUnexpected letter! please enter valid letter between a to h")
                 self.get_inpt("Enter valid square : ")
                 continue
 
@@ -62,4 +62,4 @@ inpt_handler = InputHandler()
 number, letter = inpt_handler.input_validation()
 
 traker = Tracker(number, letter)
-print(f"[{letter}{number}] square is  a \"{traker.traker()}\" Square ")
+print(f"\n\t| [{letter}{number}] square is  a \"{traker.traker()}\" Square |\n")
